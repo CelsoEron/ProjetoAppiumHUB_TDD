@@ -1,5 +1,6 @@
 package br.com.rsinet.hub_tdd.pageObject;
 
+import org.junit.Assert;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.appium.java_client.MobileElement;
@@ -73,4 +74,10 @@ public class RegisterPage {
 	public static MobileElement btnRegister(AndroidDriver<MobileElement> driver) {
 		return (MobileElement) driver.findElementById("com.Advantage.aShopping:id/buttonRegister");
 	}
+
+	public static MobileElement messagePassword(AndroidDriver<MobileElement> driver) {
+		return (MobileElement) driver.findElementByXPath("//android.view.ViewGroup[@content-desc=\"Home Page\"]/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.LinearLayout[4]/android.widget.RelativeLayout/android.widget.TextView");
+
+	}
+
 }

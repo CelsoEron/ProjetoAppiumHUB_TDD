@@ -35,6 +35,10 @@ public class HomePage {
 		return (MobileElement) driver.findElementById("com.Advantage.aShopping:id/editTextSearch");
 	}
 	
+	public static MobileElement usernameCheck(AndroidDriver<?> driver) {
+		return (MobileElement) driver.findElementById("com.Advantage.aShopping:id/textViewMenuUser");
+	}
+	
 
 	
 }
