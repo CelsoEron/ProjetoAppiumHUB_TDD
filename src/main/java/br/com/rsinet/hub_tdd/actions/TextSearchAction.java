@@ -17,7 +17,7 @@ public class TextSearchAction {
 		HomePage.boxSearch(driver).sendKeys("HP");
 		HomePage.btnSearch(driver).click();
 		ProductsPage.produtoSearchTxt(driver).click();
-		Assert.assertEquals(ProductsPage.produtoText(driver).getText(), "HP PAVILION 15T TOUCH LAPTOP");
+		
 	}
 
 	public static void ExecuteInvalidTextSearch(AndroidDriver<MobileElement> driver) {
@@ -26,6 +26,6 @@ public class TextSearchAction {
 		HomePage.boxSearch(driver).sendKeys("iPhone");
 		HomePage.btnSearch(driver).click();
 
-		Assert.assertTrue(ProductsPage.notFoundMessage(driver).getText().contains("No results for "));
+		
 	}
 }

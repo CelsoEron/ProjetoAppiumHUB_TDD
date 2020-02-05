@@ -9,7 +9,7 @@ public class ProductsPage {
 
 	public static MobileElement produto(AndroidDriver<?> driver) {
 		return (MobileElement) driver.findElementByXPath(
-				"//android.widget.RelativeLayout[@content-desc=\"Speakers\"]/android.widget.LinearLayout/android.widget.GridView/android.widget.RelativeLayout[3]/android.widget.ImageView");
+				"//android.widget.RelativeLayout[@content-desc=\"Speakers\"]/android.widget.LinearLayout/android.widget.GridView/android.widget.RelativeLayout[3]");
 	}
 
 	public static MobileElement produtoText(AndroidDriver<?> driver) {

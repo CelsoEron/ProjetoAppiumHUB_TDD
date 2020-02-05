@@ -5,6 +5,7 @@ import java.net.MalformedURLException;
 
 import org.junit.After;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -14,6 +15,8 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 import br.com.rsinet.hub_tdd.actions.TextSearchAction;
+import br.com.rsinet.hub_tdd.driverFactory.DriverManager;
+import br.com.rsinet.hub_tdd.pageObject.ProductsPage;
 import br.com.rsinet.hub_tdd.utils.ExtentReport;
 import br.com.rsinet.hub_tdd.utils.Screenshot;
 import io.appium.java_client.MobileElement;
@@ -21,11 +24,6 @@ import io.appium.java_client.android.AndroidDriver;
 
 public class TextSearchTest {
 	public static AndroidDriver<MobileElement> driver;
-
-	@BeforeClass
-	public static void startReport() throws MalformedURLException {
-		ExtentReport.iniciaReport();
-	}
 
 	@Before
 	public void startDriver() throws MalformedURLException {
@@ -41,6 +39,7 @@ public class TextSearchTest {
 		test = extent.startTest("Pesquisa por texto válida");
 
 		TextSearchAction.ExecuteValidTextSearch(driver);
+		Assert.assertEquals(ProductsPage.produtoText(driver).getText(), "HP PAVILION 15T TOUCH LAPTOP");
 		String screenShotPath = Screenshot.capture(driver, "TextSearchValid");
 		test.log(LogStatus.PASS, "Funcionou: " + test.addScreenCapture(screenShotPath));
 	}
@@ -50,19 +49,13 @@ public class TextSearchTest {
 		test = extent.startTest("Pesquisa por texto inválida");
 
 		TextSearchAction.ExecuteInvalidTextSearch(driver);
+		Assert.assertTrue(ProductsPage.notFoundMessage(driver).getText().contains("No results for "));
 		String screenShotPath = Screenshot.capture(driver, "TextSearchInvalid");
 		test.log(LogStatus.PASS, "Funcionou: " + test.addScreenCapture(screenShotPath));
 	}
 
 	@After
 	public void closeDriver() {
-
-		((AndroidDriver) driver).closeApp();
-
-	}
-
-	@AfterClass
-	public static void closeReport() {
-		ExtentReport.fechaReport();
+		DriverManager.closeDriver(driver);
 	}
 }

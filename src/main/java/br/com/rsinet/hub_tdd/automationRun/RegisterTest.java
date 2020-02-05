@@ -24,11 +24,6 @@ public class RegisterTest {
 
 	public static AndroidDriver<MobileElement> driver;
 
-	@BeforeClass
-	public static void startReport() throws MalformedURLException {
-		ExtentReport.iniciaReport();
-	}
-
 	@Before
 	public void startDriver() throws MalformedURLException {
 
@@ -60,11 +55,5 @@ public class RegisterTest {
 	@After
 	public void closeDriver() {
 		DriverManager.closeDriver(driver);
-	}
-
-	@AfterClass
-	public static void fechaReport() {
-		ExtentReport.fechaReport();
-
 	}
 }
