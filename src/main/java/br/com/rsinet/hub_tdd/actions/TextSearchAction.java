@@ -2,12 +2,8 @@ package br.com.rsinet.hub_tdd.actions;
 
 import org.junit.Assert;
 
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
-
 import br.com.rsinet.hub_tdd.pageObject.HomePage;
 import br.com.rsinet.hub_tdd.pageObject.ProductsPage;
-import br.com.rsinet.hub_tdd.utils.ExtentReport;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;

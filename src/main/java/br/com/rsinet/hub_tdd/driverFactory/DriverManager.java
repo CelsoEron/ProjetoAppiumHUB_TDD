@@ -16,7 +16,7 @@ public class DriverManager {
 		DesiredCapabilities caps = new DesiredCapabilities();
 		URL url = new URL("http://127.0.0.1:4723/wd/hub");
 
-		caps.setCapability("deviceName", "10.1.1.170:5555");
+		caps.setCapability("deviceName", "Redmi");
 		caps.setCapability("platformName", "android");
 		caps.setCapability("appPackage", "com.Advantage.aShopping");
 		caps.setCapability("appActivity", "com.Advantage.aShopping.SplashActivity");
@@ -27,11 +27,10 @@ public class DriverManager {
 
 	}
 
-	public static void closeApp(WebDriver driver) {
+	public static void closeDriver(AndroidDriver driver) {
 		if (driver != null)
 
-			driver.close();
-		driver.quit();
+			((AndroidDriver) driver).quit();
 
 	}
 }
