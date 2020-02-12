@@ -11,7 +11,7 @@ import br.com.rsinet.hub_tdd.automationRun.RegisterTest;
 import br.com.rsinet.hub_tdd.automationRun.TextSearchTest;
 
 @RunWith(Suite.class)
-@SuiteClasses({ ClickSearchTest.class, RegisterTest.class, TextSearchTest.class })
+@SuiteClasses({ RegisterTest.class, ClickSearchTest.class, TextSearchTest.class})
 public class Runner {
 
 	@BeforeClass
